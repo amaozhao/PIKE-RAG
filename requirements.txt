@@ -5,6 +5,7 @@ jsonlines
 langchain
 langchain_chroma
 langchain_community
+langchain-text-splitters
 langchain_huggingface
 markdown
 openai

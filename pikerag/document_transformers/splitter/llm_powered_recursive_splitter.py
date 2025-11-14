@@ -72,7 +72,7 @@ class LLMPoweredRecursiveSplitter(TextSplitter):
     def _resplit_chunk_and_generate_summary(
         self, text: str, chunks: List[str], chunk_summary: str, **kwargs,
     ) -> Tuple[str, str, str, str]:
-        assert len(chunks) >= 2, f"When calling this function, input chunks length should be no less than 2!"
+        assert len(chunks) >= 2, "When calling this function, input chunks length should be no less than 2!"
         text_to_resplit = text[:len(chunks[0]) + len(chunks[1])]
 
         # Format the message template.
@@ -150,7 +150,7 @@ class LLMPoweredRecursiveSplitter(TextSplitter):
 
                     if len(chunk) == 0:
                         if self.logger is not None:
-                            self.logger.debug(msg=f"Skip empty re-split first chunk", tag=self.NAME)
+                            self.logger.debug(msg="Skip empty re-split first chunk", tag=self.NAME)
 
                         chunk_summary = next_summary
                         chunks = [chunks[0] + chunks[1]] + chunks[2:]

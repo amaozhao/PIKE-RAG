@@ -19,7 +19,7 @@ def infer_file_type(file_path: str) -> Optional[DocumentType]:
 
         # TODO: move to logging instead
         print(f"File type cannot recognized: {file_path}.")
-        print(f"Please check the pikerag.document_loaders.DocumentTyre for supported types.")
+        print("Please check the pikerag.document_loaders.DocumentTyre for supported types.")
         return None
 
     else:
@@ -34,7 +34,7 @@ def get_loader(file_path: str, file_type: DocumentType = None) -> Optional[BaseL
     if file_type is None:
         inferred_file_type = infer_file_type(file_path)
         if inferred_file_type is None:
-            print(f"Cannot choose Document Loader with undefined type.")
+            print("Cannot choose Document Loader with undefined type.")
             return None
 
     if inferred_file_type == DocumentType.csv:
